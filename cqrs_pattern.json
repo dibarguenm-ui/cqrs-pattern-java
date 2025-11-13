@@ -1,0 +1,127 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "c7a58a3a-160d-4f99-8539-60ad35fac46c",
+        "name": "cqrs_patern"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"eventType\":\"CreateStudent\",\n  \"student\":{\n    \"firstName\":\"Elsa1\",\n    \"lastName\":\"Patero1\",\n    \"email\":\"epatero1@correo.com\"\n  }\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:8620",
+              "path": "/students/"
+            },
+            "id": "d5000407-a6cc-4660-94c8-3b4fda3134d1",
+            "name": "CreateUser",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"eventType\":\"UpdateStudent\",\n  \"student\":{\n    \"code\":1,\n    \"firstName\":\"Elsa\",\n    \"lastName\":\"Patero\",\n    \"email\":\"epatero@correo.com\"\n  }\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:8620",
+              "path": "/students/"
+            },
+            "id": "e33e0b6f-822e-47af-97e5-0c97663bc4c2",
+            "name": "UpdateUser",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\"timestamp\":\"2024-10-31T22:47:15.308+00:00\",\"status\":405,\"error\":\"Method Not Allowed\",\"path\":\"/students/\"}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8622",
+              "path": "/students/"
+            },
+            "id": "a8002d8a-708e-437c-af20-6cbb028bec0c",
+            "name": "getUser",
+            "headers": []
+          }
+        }
+      ]
+    }
+  ]
+}
